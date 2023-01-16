@@ -1,6 +1,8 @@
 package com.bridgelabz;
 
-public class FindMax {
+import com.bridgelabz.FindMax;
+
+public class FindMax <E> {
 
 	<E extends Comparable<E>> E checkMaximum(E x, E y, E z) {
 		E max = x; //Assuming x is the largest (initially)
@@ -15,12 +17,15 @@ public class FindMax {
 	}
 
 	public static void main(String[] args) {
-		FindMax Obj = new FindMax();
-		System.out.println("The maximum Integer is : " +Obj.checkMaximum(1, 3, 5));
+		FindMax<Integer> intObj = new FindMax<>();
+		System.out.println("The maximum Integer is : " + intObj.checkMaximum(1, 7, 5));
 		
-		System.out.println("The maximum Float is : " + Obj.checkMaximum(2.25, 5.480, 7.55));
+		FindMax<Float> floatObj = new FindMax<>();
+		System.out.println("The maximum Float is : " + floatObj.checkMaximum(2.25, 5.480, 9.55));
 		
-		System.out.println("The maximum String is : " + Obj.checkMaximum("Apple", "Peach", "Banana"));
+		FindMax<String> stringObj = new FindMax<>();
+		System.out.println("The maximum String is : " + stringObj.checkMaximum("Apple", "Peach", "Banana"));
 		
 	}
+
 }
